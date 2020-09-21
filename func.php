@@ -20,10 +20,10 @@ if(isset($_POST['login_submit'])){
 
 function get_patient_details(){
 	global $con;
-	$query="select * from doctorapp";
+	$query="select * from appointmenttb";
 	$result=mysqli_query($con,$query);
 	while($row=mysqli_fetch_array($result)){
-		$fname=$_POST['fname'];
+		$fname=$_POST['fnaem'];
         $lname=$_POST['lname'];
         $email=$_POST['email'];
 		$contact=$_POST['contact'];
@@ -51,6 +51,23 @@ function get_patient_details(){
 		echo '<option value="'.$name.'">'.$name.'</option>';
 	}
 }
+if(isset($_POST['update_data']))
+{
+	$contact=$_POST['contact'];
+	$status=$_POST['status'];
+	$query="update appointmenttb set payment='$status' where contact='$contact';";
+	$result=mysqli_query($con,$query);
+	if($result)
+		header("Location:updated.php");
+}
 
+if(isset($_POST['doc_sub']))
+{
+	$name=$_POST['name'];
+	$query="insert into doctb(name)values('$name')";
+	$result=mysqli_query($con,$query);
+	if($result)
+		header("Location:adddoc.php");
+}
 	
 ?>
