@@ -52,7 +52,7 @@
       
       <a class="list-group-item list-group-item-action change-now" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Doctors Section</a>
       
-      <a class="list-group-item list-group-item-action change-now" type="submit" id="list-patient-list" data-toggle="list" href="C:\xampp\htdocs\f\patient.php" role="tab" aria-controls="settings">Patient list</a>
+      <a class="list-group-item list-group-item-action change-now" type="submit" id="list-patient-list" data-toggle="list" href="#list-patient" role="tab" aria-controls="settings">Patient list</a>
       
     </div><br>
   </div>
@@ -98,9 +98,11 @@
           </div>
         </div><br>
       </div>
+
       
       
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+      
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-patient-list">
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
@@ -125,6 +127,35 @@
       </div>
        <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">...</div>
     </div>
+    <div class="tab-pane fade show active" id="list-patient" role="tabpanel" aria-labelledby="list-home-list">
+        <div class="container-fluid">
+          <div class="card">
+          <div class="card-body" id="final" style="background-color:#3498D8;color:#ffffff;">
+            <a href="admin-panel.php" class="btn btn-light">Go Back</a>
+              <center><h4>Patient Details</h4></center><br>
+              
+            </div>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Contact Details</th>
+      <th scope="col">Doctor Appointment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php  get_patient_details(); ?>
+    
+  </tbody>
+</table>
+              
+          </div>
+        </div><br>
+      </div>
+
+</div>
   </div>
 </div>
    </div>
