@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con=mysqli_connect("localhost/final","root","","hmsdb.sql");
+$con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['login_submit'])){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
@@ -18,6 +18,39 @@ if(isset($_POST['login_submit'])){
     }
 } 
 
+function get_patient_details(){
+	global $con;
+	$query="select * from doctorapp";
+	$result=mysqli_query($con,$query);
+	while($row=mysqli_fetch_array($result)){
+		$fname=$_POST['fname'];
+        $lname=$_POST['lname'];
+        $email=$_POST['email'];
+		$contact=$_POST['contact'];
+		echo "<tr>
+		<th >$fname/th>
+		<th >$lname</th>
+		<th > $email</th>
+		<th >$contact</th>
+		
+		</tr>";
+        
+ 
+}
+}
 
+ 
+ function display_docs()
+{
+	global $con;
+	$query="select * from doctb";
+	$result=mysqli_query($con,$query);
+	while($row=mysqli_fetch_array($result))
+	{
+		$name=$row['name'];
+		echo '<option value="'.$name.'">'.$name.'</option>';
+	}
+}
 
+	
 ?>

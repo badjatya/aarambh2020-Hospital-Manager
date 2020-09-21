@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+<?php include("func.php");?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -50,7 +52,8 @@
       
       <a class="list-group-item list-group-item-action change-now" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Doctors Section</a>
       
-      <a class="list-group-item list-group-item-action change-now" id="list-patient-list" data-toggle="list" href="#list-patient" role="tab" aria-controls="settings">Patient list</a>
+      <a class="list-group-item list-group-item-action change-now" type="submit" id="list-patient-list" data-toggle="list" href="C:\xampp\htdocs\f\patient.php" role="tab" aria-controls="settings">Patient list</a>
+      
     </div><br>
   </div>
   <div class="col-md-8">
@@ -73,8 +76,8 @@
                   <div class="col-md-4"><label>Doctor:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                     <!-- <option value="Dr. Punam Shaw">Dr. Punam Shaw</option>
-                      <option value="Dr. Ashok Goyal">Dr. Ashok Goyal</option> -->
+                   <option value="Dr. Punam Shaw">Dr. Punam Shaw</option>
+                      <option value="Dr. Ashok Goyal">Dr. Ashok Goyal</option> 
                       <?php display_docs();?>
                     </select>
                   </div><br><br>
@@ -134,3 +137,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
   </body>
 </html>
+
+
+
+
